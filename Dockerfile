@@ -7,19 +7,15 @@ WORKDIR /usr/src/app
 RUN apt-get update && apt-get install -y \
     python3-pip \
     git \
-    libtinyxml2-9 \
-    libcurl3-gnutls \
-    libmms0 \
-    libzen0v5 \
-    libcurl4-gnutls-dev \
-    libzen-dev \
     wget \
     ffmpeg \
-    libsox-fmt-mp3 \
     sox \
+    libsox-fmt-mp3 \
     locales \
-    megatools \
-  && rm -rf /var/lib/apt/lists/*
+    libcurl4 \
+    libtinyxml2-8 \
+ && rm -rf /var/lib/apt/lists/*
+
 
 RUN wget -q -O /tmp/libzen0v5.deb http://th.archive.ubuntu.com/ubuntu/pool/universe/libz/libzen/libzen0v5_0.4.40-1_amd64.deb \
   && dpkg -i /tmp/libzen0v5.deb \
